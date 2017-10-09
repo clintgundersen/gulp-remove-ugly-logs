@@ -51,7 +51,7 @@ gulp-remove ugly-logs can be called with no parameters, or with an options objec
 ### purgeLogs()
 If no options object is specified, a default namespace of 'console' will be used.  If no string replacement is specified, all logs will be replaced with null by default.
 
-### purgeLogs({namespace:['console','logger'],replacement:"null",})
+### purgeLogs({namespace:[],replacement:"string"})
 
 #### namespace
 Type: `Array of strings`

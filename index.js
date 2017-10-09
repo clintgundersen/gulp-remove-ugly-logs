@@ -111,7 +111,6 @@ let main = function(options) {
     //send the file along to the next plugin
     this.push(file);
     callback(null, file);
-
   });
 };
 

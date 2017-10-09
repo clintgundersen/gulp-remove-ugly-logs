@@ -1,0 +1,24 @@
+{
+  "name": "gulp-remove-ugly-logs",
+  "version": "0.8.1",
+  "description": "Removes logging statements from a file, including those that might be difficult to remove such as logs nested inside a ternary or other not-straight-forward logs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "[\"gulp\"",
+    "\"gulpplugin\"",
+    "\"console\"",
+    "\"log\"",
+    "\"debugging\"",
+    "\"logger\"",
+    "\"remove\"]"
+  ],
+  "author": "Clint Gundersen",
+  "license": "ISC",
+  "devDependencies": {
+    "gutil": "^1.6.4",
+    "through2": "^2.0.3"
+  }
+}

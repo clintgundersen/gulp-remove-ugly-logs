@@ -7,7 +7,7 @@ let through = require('through2'),
 const PLUGIN_NAME = 'gulp-remove-ugly-logs';
 
 function removeLogs(namespace, replacement, string) {
-  var head = string.indexOf(namespace),
+  let head = string.indexOf(namespace),
       modString = string;
 
   while (head > -1) {
@@ -25,15 +25,15 @@ function replaceSubstringAtIndex(string, replacement, indexObj) {
 }
 
 function findLogs(namespace, headIndex, string) {
-  var headPointer = headIndex,
+  let headPointer = headIndex,
       tailPointer = '',
       stringFlag = false,
       stringInitChar = '',
       level = 0,
       len = string.length;
 
-  for (var i = headIndex; i < len; i++) {
-    var char = string[i],
+  for (let i = headIndex; i < len; i++) {
+    let char = string[i],
         charEscaped = string[i - 1] === '\\';
     if (headPointer > -1) {
       if (!stringFlag && char === '(') {
@@ -65,12 +65,12 @@ function findLogs(namespace, headIndex, string) {
   return {head: headPointer, tail: tailPointer};
 }
 
-var main = function(options) {
+let main = function(options) {
 
   if(!options){
     options = {
       namespace:['console'],
-      replacement: 0,
+      replacement: "null",
     }
   } else{
     if (typeof(options.namespace) === 'string') {
@@ -84,7 +84,7 @@ var main = function(options) {
     }
   }
 
-  let stream = through.obj(function(file, enc, callback) {
+  return through.obj(function(file, enc, callback) {
 
     if(file.isBuffer()){
 
@@ -113,9 +113,6 @@ var main = function(options) {
     callback(null, file);
 
   });
-
-  return stream;
-
 };
 
 module.exports = main;

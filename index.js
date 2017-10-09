@@ -80,7 +80,7 @@ let main = function(options) {
     }
 
     if(!options.replacement){
-      options.replacement = 0
+      options.replacement = "null"
     }
   }
 
